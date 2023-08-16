@@ -1,0 +1,114 @@
+@use "../abstracts/variables" as var;
+@use "sass:math";
+@use "../abstracts/mixins" as mix;
+
+.wraper {
+  display: flex;
+  position: relative;
+}
+.nav {
+  // @media (max-width: 768px) {
+  //   flex-direction: row;
+  //   position: relative;
+  //   width: 100%;
+  //   justify-content: center;
+  //   align-items: center;
+  //   height: 10vh;
+  //   padding-top: 0;
+  // }
+  @include mix.tablet-styles {
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    padding-top: 0;
+  }
+  @extend%section2;
+  width: 20%;
+  position: fixed;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .logo-nav {
+    // @media (max-width: 768px) {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   width: 80%;
+    // }
+    @include mix.tablet-styles {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+  }
+  .logo {
+    @extend%wrap;
+    padding-bottom: 60px;
+    // @media (max-width: 768px) {
+    //   padding: 0;
+    // }
+    @include mix.tablet-styles {
+      padding: 0;
+    }
+  }
+
+  ul {
+    // @media (max-width: 768px) {
+    //   display: none;
+    // }
+    @include mix.tablet-styles {
+      display: none;
+    }
+    @extend%wrap;
+    list-style-type: none;
+    padding-left: 0;
+    li:not(last-child) {
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var.$text-color-primary;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  .copyright {
+    // @media (max-width: 768px) {
+    //   display: none;
+    // }
+    @include mix.tablet-styles {
+      display: none;
+    }
+    @extend%wrap;
+    p {
+      margin-bottom: 0;
+      color: var.$text-color-primary;
+    }
+    a {
+      text-decoration: none;
+      color: var.$text-color-primary;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  .menu {
+    display: none;
+    // @media (max-width: 768px) {
+    //   display: block;
+    //   font-size: 30px;
+    //   color: var.$text-color-primary;
+    // }
+    @include mix.tablet-styles {
+      display: block;
+      font-size: 30px;
+      color: var.$text-color-primary;
+    }
+  }
+}
